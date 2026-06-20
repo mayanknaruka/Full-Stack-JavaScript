@@ -5,3 +5,10 @@ const myObject = {
     // do stuff!
   },
 };
+
+
+// dot notation
+console.log(myObject.property); // "Value!"
+
+// bracket notation
+console.log(myObject["obnoxious property"]); // [Function]
