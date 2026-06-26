@@ -10,3 +10,13 @@ function makeAddingFunction(firstNumber) {
     return firstNumber + secondNumber;
   }
 }
+
+
+const add5 = makeAddingFunction(5);
+console.log(add5(2)); // 7
+
+const add8 = makeAddingFunction(8);
+console.log(add8(2)); // 10
+
+const add79100105110 = makeAddingFunction(79100105110);
+console.log(add79100105110(111687378)); // 79211792488
