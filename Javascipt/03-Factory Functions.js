@@ -20,3 +20,26 @@ console.log(add8(2)); // 10
 
 const add79100105110 = makeAddingFunction(79100105110);
 console.log(add79100105110(111687378)); // 79211792488
+
+
+
+
+function createUser(name) {
+  const discordName = "@" + name;
+
+  let reputation = 0;
+  const getReputation = () => reputation;
+  const giveReputation = () => { reputation++; };
+
+  return { name, discordName, getReputation, giveReputation };
+}
+
+const josh = createUser("josh");
+josh.giveReputation();
+josh.giveReputation();
+
+// logs { discordName: "@josh", reputation: 2 }
+console.log({
+  discordName: josh.discordName,
+  reputation: josh.getReputation()
+});
