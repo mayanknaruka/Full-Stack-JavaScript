@@ -21,3 +21,4 @@ const Rectangle = class Rectangle2 {
     this.width = width;
   }
 };
+
