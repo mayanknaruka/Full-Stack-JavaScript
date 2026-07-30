@@ -1,5 +1,5 @@
 // src/index.js
-import odinImage from "./odin.png";
+import odinImage from "./odin.jpg";
 
 const image = document.createElement("img");
 image.src = odinImage;
