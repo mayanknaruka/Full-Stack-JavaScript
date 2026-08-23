@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giphy Search</title>
+</head>
+
+<body>
+
+    <input type="text" id="search">
+    <button id="searchBtn">Search</button>
+
+    <br><br>
+
+    <img src="#" id="gif">
+
+    <script>
+
+        const img = document.querySelector('#gif');
+        const search = document.querySelector('#search');
+        const button = document.querySelector('#searchBtn');
+
+        button.addEventListener('click', function() {
+
+            const searchTerm = search.value;
+
+            fetch(`https://api.giphy.com/v1/gifs/translate?api_key=oTLggN3Af9A6FhVTfVRqV2focCDMyUMM&s=${searchTerm}`)
+
+                .then(function(response) {
+
+                    if (!response.ok) {
+                        throw new Error('Something went wrong!');
+                    }
+
+                    return response.json();
+                })
+
+                .then(function(response) {
+
+                    img.src = response.data.images.original.url;
+
+                })
+
+                .catch(function(error) {
+
+                    console.log(error);
+
+                });
+
+        });
+
+    </script>
+
+</body>
+</html>
