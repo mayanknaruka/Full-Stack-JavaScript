@@ -1,0 +1,18 @@
+const pascal = function (rowNumber) {
+    if (rowNumber === 1) {
+        return [1];
+    }
+
+    const previousRow = pascal(rowNumber - 1);
+    const previousRowWithZeros = [0, ...previousRow, 0];
+
+    const newRow = [];
+
+    for (let i = 0; i < previousRowWithZeros.length - 1; i += 1) {
+        const leftParent = previousRowWithZeros[i];
+        const rightParent = previousRowWithZeros[i + 1];
+        newRow.push(leftParent + rightParent);
+    }
+
+    return newRow;
+};
